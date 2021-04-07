@@ -5,17 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- stylesheets -->
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <!-- fonts -->
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lato&display=swap" rel="stylesheet">
     <!-- icons -->
+
     <script src="https://kit.fontawesome.com/4faab7f9e6.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" type="image/jpg" href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9Ijk0OC4xMzJweCIgaGVpZ2h0PSI5NDguMTMycHgiIHZpZXdCb3g9IjAgMCA5NDguMTMyIDk0OC4xMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDk0OC4xMzIgOTQ4LjEzMjsiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPHBhdGggZD0iTTkxNy4zNDQsOTQuNTZjLTIuNi0xMC0xMi44OTktMTYtMjIuODk5LTEzLjRsLTM3LjYwMSw5LjljLTEwLDIuNi0xNiwxMi45LTEzLjM5OSwyMi45bDE1LjUsNTkuMQ0KCQljMCwwLTEwNi0zMy40LTEyNi42MDEtMzguMWM5LjktMTQuNywxNS41LTMyLjUsMTQuNy01MS43Yy0xLjctNDQuMi0zNy4zLTgwLjMtODEuNS04Mi42Yy00OS43LTIuNi05MC45LDM2LjktOTAuOSw4Ni4xDQoJCWMwLDkuOSwxLjcsMTkuNSw0LjgwMSwyOC4zbC0yNi44MDEtMS43Yy0xOC42LTEuMi0zNy4xOTksMS44LTU0LjM5OSw4LjdsLTEwOS40MDEsNDMuOWMtOS43LDMuOS0xNC4zOTksMTQuOS0xMC41LDI0LjZsMTQuMywzNS43DQoJCWMzLjksOS43LDE0LjksMTQuNCwyNC42MDEsMTAuNWw3OS0zMS43YzI0LjgtMTAsNTEuOC0xMy4zLDc4LjM5OS05LjdsNzUuNSwxMC4ybDM1LjgwMSwyMjcuMWwtMTY4LjEwMSwyNC41DQoJCWMtMzEsNC41LTU3LjQsMjUuNC02OC45LDU0LjU5OWwtNDkuNywxMjYuNGMtNTguMTAxLDkuMS0xMTAsMjcuNy0xNTEuNSw1NGMtMy40LDIuMS0xNy40LTQtMjEuMi00LjhjLTguNC0xLjgtMTYuOC0zLjMtMjUuMy00LjMNCgkJYy0xNy0yLjEwMS0zNC4yLTIuNjAxLTUxLjMtMS42MDFjLTM0LjIsMi4xMDEtNjguMSwxMC4zLTk5LjQsMjQuM2MtMTUuNSw3LTI5LjgsMTUuNC00My43LDI1LjJjLTEuOSwxLjMtMy43LDIuNy01LjUsNC4xMDENCgkJYy0xLDAuOC0xLjUsMi4xLTEuMywzLjNjMC4xLDAuODk5LDAuNywyLDEuNywxLjdjMy0wLjYwMSw2LjctMS4zMDEsMTEtMi4yYzkwLjgtMTQuNCwxNzYsMTIuNSwyNTQuNyw1My4xDQoJCWM1Ni44LDI5LjMsMTA5LjgsNjUuMTAxLDE2NS45LDk1LjYwMWM4Miw0NC42LDE3MS42MDEsNzguMTk5LDI2Ny41LDUxLjZjNS43LTEuNiwxMC44LTMsMTUuMi00LjRjNC40LTEuNiw4LjEtMy4xLDExLjEtNC4xOTkNCgkJbDAuMi0wLjEwMWMyLTAuOCwyLjMtNC44OTksMC40LTUuMWgtMC4yYy0wLjIsMC0wLjUtMC4xMDEtMC43LTAuMTAxYy0yLjgtMC4zOTktNi4xLTAuODk5LTkuODk5LTEuMzk5DQoJCWMtMjYtMy4yLTUxLjMwMS05LjktNzUuOS0xOC45Yy0xOS41LTcuMi0zOC42LTE1Ljg5OS01Ny4zLTI1LjZjLTIuMy0xLjItNC42MDEtMi40LTYuOS0zLjYwMWMyOSw0LjEwMSw1Ny41LDYuMTAxLDg1LjMsNi4xMDENCgkJYzkyLjEwMSwwLDE3NS0yMiwyMzUuNy02MC40YzMtMS44OTksMy43LTUuODk5LDEuNi04LjdjLTMyLjYtNDMuNS04MC41LTgyLjY5OS0xMzkuMTk5LTExMy4zOTlsLTEuMi00LjYwMQ0KCQljLTEuOC03LjMtMS4zLTE0LjY5OSwxLjMtMjEuNWMxLjMtMy4zLDMtNi4zOTksNS4yLTkuMTk5bDguMS0xMC40bDI1LjItMzIuMmM0NC4zLTU2LjUsNjMuOC0xMjguMyw1NC44LTE5OQ0KCQljLTAuMzk5LDguOC0xLjYsMTgtMy44OTksMjcuNGMtMTAuOSw0NC4zOTktNDMuOSw3OC04Mi4zMDEsMTAwLjVjLTI0LjM5OSwxNC4zLTUxLjMsMjUtNzguNiwzMi41Yy00LjUsMTAuMy0yOS45LDc1LjMtMzAsNzUuNjk5DQoJCWMtMjEtNi4xOTktNDIuNy0xMS41LTY1LjEtMTUuNmMtMjgtNS4xLTU1LjctOC4zLTgyLjgwMS05LjVsMjkuNy03NS42YzU2LjEwMS02LjYwMSwxMTMuMi0xMC43LDE2OC44LTIwLjgNCgkJYzUxLjEwMS05LjMwMSwxMDYuOS00MS4zMDEsMTI2LjYwMS05MS40YzIwLjgtNTIuOC0wLjQtMTEzLjUtMTEuNC0xNjYuN2MtMi4zOTktMTEuOC00Ljg5OS0yMy43LTcuMy0zNS41bDcwLjMsMjEuMw0KCQljMzUuMTAxLDEwLjYsNjguMi0yMS4zLDU4LjktNTYuN0w5MTcuMzQ0LDk0LjU2eiIvPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" />
-    <title>Surfing school</title>
+    <title>The Surfing Project</title>
 </head>
 <body>
+    <!-- header -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">The Surfing Project</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Le programme</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Nos prochaines sessions
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Sordi douze</a></li>
+                  <li><a class="dropdown-item" href="#">Calendes Grecques</a></li>
+                  <li><a class="dropdown-item" href="#">36 du mois</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- hero -->
     
+    <!-- scripts -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 </body>
 </html>
